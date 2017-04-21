@@ -29,7 +29,7 @@ def get_api(local_info,filename):
             sleep(1)
             local = local.strip(' ')
             rep['%s' % local] = []
-            url = 'https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=AIzaSyA3hEATmoJ9h_6WOaIlCOcsMuqPqPWlqz0'%local
+            url = 'https://maps.googleapis.com/maps/api/geocode/json?address=%s&key={YOUR KEY}'%local
             url1 = urllib.request.quote(url,safe=':/&?=')
             print(url1)
             req = urllib.request.Request(url1)
