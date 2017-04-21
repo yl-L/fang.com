@@ -105,5 +105,5 @@ def write(address,file):
             spamwriter.writerow(row)
 
 if __name__ == '__main__':
-    key_list = ['AIzaSyA3hEATmoJ9h_6WOaIlCOcsMuqPqPWlqz0','AIzaSyA_2Z7d5dF_-NRhDE3nQQYKYHUQxtloEF4','AIzaSyBo9d7Nh_Ow4FpiXDwNZysXHUFJp6xsLds','AIzaSyDLEvItzGYGunJHiR9oud_qHLUEA3FbdXQ','AIzaSyBJBd6MjiuvXkV4OwW1pfOGE1or05BnKOk','AIzaSyAVJfWviP4bnisiOaErTrkBteMHf1Nu-Nk','AIzaSyDTSn21SVlFmhqYFq4ff-1IHBN4zA3if_I','AIzaSyCyT3iIevSX8EbJQxGeSa-NIxPpDjb-XxQ','AIzaSyDjjRvB3plmkfVDruUqTMj4DWDR0e1D4fI','AIzaSyBOjlXXh7Xh1H9aYA8Q1z3NrnLDvuZ6HbA','AIzaSyAc3CRTjwMys6RHBxYp4LSypQZUON32ULw','AIzaSyClRUFVR4_lOX-FwpKqh36b1UqfOhXGOAo']
+    key_list = [{YOUR KEY}]
     read_csv(key_list)
