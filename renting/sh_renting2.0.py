@@ -183,7 +183,7 @@ def download_info(url_list,page_list,filename):
 #朝向#平方 户型 整租 价格 标题 位置 层数
 
 def mysql():
-    con = MySQLdb.connect(host='45.77.22.77',port = 3306, user="root", passwd="YES", db="Hotel")
+    con = MySQLdb.connect(host='********',port = ****, user="********", passwd="********", db="****")
     cur = con.cursor()
     cur.execute("insert into hotel_hotel (name,score,img,address,description) values (%s,%s,%s,%s,%s)",
                 (name, score, img, finallyaddress, dis))
