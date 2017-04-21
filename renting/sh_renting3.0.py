@@ -182,7 +182,7 @@ def download_info(url_list,page_list,city,qu):
 
 
 def mysql(city,data):
-    con = pymysql.connect(host='45.76.212.82', port=3306, user="soufangwang", passwd="XI6DLZ7PAcXLteVi", db="soufang",charset='utf8')
+    con = pymysql.connect(host='********', port=****, user="********", passwd="********", db="********",charset='utf8')
     cur = con.cursor()
     #标题,区位,价格,位置,出租形式,户型,平方,层数,朝向,经纬度                                                                                    
     sql = "CREATE TABLE if not exists %s"%city + "(id int(10) primary key  auto_increment not null,标题 CHAR(50),区位 CHAR(10),价格 INT(10),位置 CHAR(50),出租形式 CHAR(6),户型 CHAR(6),平方 CHAR(6),层数 CHAR(20),朝向 CHAR(6),经纬度 CHAR(50))"
