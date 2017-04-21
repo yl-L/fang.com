@@ -98,15 +98,15 @@ def replace(data_info,rep):#当keys用尽时，遍历数据，替换rep中所有
 def post(data_info):
     print('正在输入到MySQL')
     d = str(data_info).replace('[', '(').replace(']', ')').replace('((', '(').replace('))', ')')
-    con = pymysql.connect(host='***********', port=****, user="***********, passwd="***********", db="****",
-                          charset='utf8')
+    con = pymysql.connect(host='***********', port=****, user="***********, passwd="***********", db="****", charset='utf8')
     cur = con.cursor()
     sql = 'insert into %s (id,经纬度) values %s on duplicate key update id=values(id),经纬度=values(经纬度)' % (city, d)
     cur.execute(sql)
     cur.close()
     con.commit()
     con.close()
-#[[1, '22.814961,113.809134'], [2, '22.738056,114.121444'], [3, '22.7210111,114.2080736'], [4, '22.7210111,114.2080736'], [5, '22.9727592,114.0082092'], [6, '22.778509,114.022952'], [7, 'ZERO_RESULTS'], [8, '23.0100737,114.0742398']]
+
+
 if __name__ == '__main__':
     key_list = [{YOUR KEY}]
     city = '深圳'
