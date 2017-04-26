@@ -17,14 +17,13 @@ def read_url(req,error_num):#获取网页信息
             f.write(str(data))
     except TimeoutError:
         print('!!!!!!!!!!!!!!TimeoutError!!!!!!!!!!!!!!!!!!!!!!')
-        sleep(3)
-        print('访问请求失败，睡眠3s')
-        data = request.urlopen(req).read()
-        print('get data successful')
-        data = gzip.decompress(data).decode("gb18030")
-        print('结束get_urldata')
-        with open("./cache.txt", 'w') as f:
-            f.write(str(data))
+        sleep(1)
+        print('访问请求失败，睡眠1s')
+        if error_num < 10:
+            error_num += 1
+            read_url(req, error_num)
+        else:
+            pass
     except OSError:#网页未压缩的情况下使用
         print('!!!!!!!!!!!!!!OSError!!!!!!!!!!!!!!!!!!!!!!')
         try:
@@ -35,19 +34,19 @@ def read_url(req,error_num):#获取网页信息
         except Exception as e:
             if error_num < 10:
                 error_num += 1
-                get_urldata()
+                read_url(req, error_num)
             else:
                 pass
     except Exception as e:
         print('!!!!!!!!!!!!!!Exception!!!!!!!!!!!!!!!!!!!!!')
         print(traceback.format_exc())
-        print('访问请求失败，睡眠3s')
-        data = request.urlopen(req).read()
-        print('get data successful')
-        data = gzip.decompress(data).decode("gb18030")
-        print('结束get_urldata')
-        with open("./cache.txt", 'w') as f:
-            f.write(str(data))
+        sleep(1)
+        print('访问请求失败，睡眠1s')
+        if error_num < 10:
+            error_num += 1
+            read_url(req, error_num)
+        else:
+            pass
 
 
 def get_urldata():
