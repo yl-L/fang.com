@@ -222,6 +222,4 @@ def hbase():
     pass
 
 if __name__ == '__main__':
-    #main_url = 'http://esf.sh.fang.com'
-    #get_detailpage(main_url)
     main()
