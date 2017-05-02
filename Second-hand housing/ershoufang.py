@@ -193,12 +193,12 @@ def threading_task(url, qu, city, finally_list):
 
 def sent_email(text,subject):
     msg = MIMEText('%s'%text, 'plain', 'utf-8')
-    msg['From'] = 'JD.com<sunner649@163.com>'
-    msg['To'] = 'sunner648@163.com'
+    msg['From'] = '**********'
+    msg['To'] = '***********'
     msg['Subject'] = '%s'%subject
-    from_addr = "1157661539@qq.com"
-    password = "xynyyffntjscidac"
-    to_addr = "sunner648@163.com"
+    from_addr = "***************"
+    password = "*******************"
+    to_addr = "*****************"
     smtp_server = "smtp.qq.com"
     try:
         server = smtplib.SMTP(smtp_server,587)
@@ -217,8 +217,8 @@ def sent_email(text,subject):
 def mysql(city,data):
     print('准备传输到mysql')
     try:
-        con = pymysql.connect(host='107.191.61.150', port=3306, user="soufangwang", passwd="XI6DLZ7PAcXLteVi",
-                              db="ershoufang", charset='utf8')
+        con = pymysql.connect(host='***********', port=****, user="************", passwd="********",
+                              db="********", charset='utf8')
         cur = con.cursor()
         print('游标创建成功')
         #biaoti_info[num], qu, int(jiage_info[num]), float(danjia_info[num]), weizhi, single[0], single[1], single[2], single[3], '无数据'
