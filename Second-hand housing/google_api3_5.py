@@ -11,8 +11,8 @@ from time import ctime, sleep
 
 
 def sqldb(city):
-    con = pymysql.connect(host='107.191.61.150', port=3306, user="soufangwang", passwd="XI6DLZ7PAcXLteVi",
-                          db="ershoufang",
+    con = pymysql.connect(host='*************', port=****, user="*************", passwd="*************",
+                          db="*************",
                           charset='utf8')
     df1 = pd.read_sql('SELECT id,位置,经纬度,区位 FROM %s' % city + " WHERE 经纬度 IN ('无数据', 'OVER_QUERY_LIMIT', 'REQUEST_DENIED')", con)
     con.close()
@@ -184,8 +184,8 @@ def post(data_info, city):
 
 
 def main(key_list):
-    con = pymysql.connect(host='107.191.61.150', port=3306, user="soufangwang", passwd="XI6DLZ7PAcXLteVi",
-                          db="ershoufang", charset='utf8')
+    con = pymysql.connect(host='*************', port=****, user="*************", passwd="*************",
+                          db="*************", charset='utf8')
     df1 = pd.read_sql('show tables', con)
     con.close()
     with open('./api已完成城市.txt', encoding='utf-8') as fe:
@@ -200,8 +200,8 @@ def main(key_list):
 
 
 def check_zero_results(city):
-    con = pymysql.connect(host='107.191.61.150', port=3306, user="soufangwang", passwd="XI6DLZ7PAcXLteVi",
-                          db="ershoufang",
+    con = pymysql.connect(host='*************', port=****, user="*************", passwd="*************",
+                          db="*************",
                           charset='utf8')
     a = pd.read_sql('SELECT id,经纬度 FROM %s' % city, con)
     b = pd.read_sql('SELECT id,经纬度 FROM %s' % city + " WHERE 经纬度 = 'ZERO_RESULTS'", con)
@@ -213,36 +213,7 @@ def check_zero_results(city):
 
 
 if __name__ == '__main__':
-    # 测试key: 'AIzaSyB5MtSnp0QlbmmFQTs0lPgLmE6Q_PDteGc'
-    key_list = ['AIzaSyCY2x3I3_mcHvQDAkL9Hr2DEEeKZkSqIlM', 'AIzaSyAc3CRTjwMys6RHBxYp4LSypQZUON32ULw',
-                'AIzaSyBOjlXXh7Xh1H9aYA8Q1z3NrnLDvuZ6HbA', 'AIzaSyDjjRvB3plmkfVDruUqTMj4DWDR0e1D4fI',
-                'AIzaSyCyT3iIevSX8EbJQxGeSa-NIxPpDjb-XxQ', 'AIzaSyDTSn21SVlFmhqYFq4ff-1IHBN4zA3if_I',
-                'AIzaSyAVJfWviP4bnisiOaErTrkBteMHf1Nu-Nk', 'AIzaSyBJBd6MjiuvXkV4OwW1pfOGE1or05BnKOk',
-                'AIzaSyDLEvItzGYGunJHiR9oud_qHLUEA3FbdXQ', 'AIzaSyBo9d7Nh_Ow4FpiXDwNZysXHUFJp6xsLds',
-                'AIzaSyA_2Z7d5dF_-NRhDE3nQQYKYHUQxtloEF4', 'AIzaSyA3hEATmoJ9h_6WOaIlCOcsMuqPqPWlqz0',
-                'AIzaSyADixPAxPE-cWt-v75xfUxZvJbYmjJ3De0', 'AIzaSyDBM7YabsThHPFwWbDbnEOGQGKQODY2EgE',
-                'AIzaSyDb4xLz-A6SJ58MqgqpLakZoO8o_7iNjWU', 'AIzaSyCt8KJpyn28593bZJ_3w2t6OjwCNLp3rNk',
-                'AIzaSyCa3su1RaTUzFm9NuLhuNaiYsJ3LIx6Whs', 'AIzaSyDtV3Pb7c8xcSQMpLLMbFR-ZiskOzEhp3c',
-                'AIzaSyDtZfToPhh2wMUo1BevuB8oyIWnOdGmq48', 'AIzaSyDbIe4ZFRL91a2886QdNH3YXUQIq1Mpvaw',
-                'AIzaSyC7VPz3xl2DynA-iXypSDezxo0PxeqIPW8', 'AIzaSyDdNPPzEZtnlTk5tVBNXz7sce6eq4TbELI',
-                'AIzaSyD8l9h-Z58KXIXDFxhX9jNA8ZGCW4gCiuk', 'AIzaSyB_UIIf3tqKPK_Wo28zgbSTTYG9RsW7L7w',
-                'AIzaSyCNkp6KJ1Pvla6Pp0AS-OE7Uvr6fLGfzxs', 'AIzaSyCb8S_NGnGppPJrbRaN-PmA67zm0c8lzrs',
-                'AIzaSyAVw_kqbVfO1kNA-4u7C2DqSKW6k8drs7I', 'AIzaSyCRvZt_zjMOiTmY8qcSY6o83KinMv7Z-xs',
-                'AIzaSyBFRRkZ7_WmE8Xe1S7zwXoBSn4xHca4Y1c', 'AIzaSyCXqgRoxRLlFTW13UaMFob05yRRBs6WhBg',
-                'AIzaSyD_-vUzx43zzjRcuY9Lt_D5CHJnStjuSp4', 'AIzaSyBicASVVZEgA8fGFd7dDPi5agx7zLIk2zI',
-                'AIzaSyBNsSMH_asFSUqZ1mR4XYZmm6I5U-ExtWM', 'AIzaSyCqI9Zc12Ty5WqxW17sh-HsdqTOaOxuvvc',
-                'AIzaSyA7Uwcmh9QZm2GmUyU_VXvNGthjjlTzNwc', 'AIzaSyABqjoRQGE7y5EqBvkrXy5p7GNND_XdVPg',
-                'AIzaSyCqCctDnBzKBxvb2_IGCAhaPoTMqvlM0N4', 'AIzaSyC1idOMUHZMGPWPB2oW9oS0ztJbqVNS3Ug',
-                'AIzaSyD-yRmLlLdCOZahwJwU6rgBwKm1_9hBZQ4', 'AIzaSyBFBpHKmSSRaQnYRlSqS_ykJjwALglhSzo',
-                'AIzaSyDRweXGOBNrKgSP-_qH_6RqiQYwEEN_E1Q', 'AIzaSyCUMv08WMdXo2asQxA9lexTExCYIPy8hjA',
-                'AIzaSyBpwqwBpPoa-IkLg4oOc8JttFLqm65hHYI', 'AIzaSyCVix0ki_s2xx2ssyatfannyEIN7F_vbG0',
-                'AIzaSyAmN3yTE72jCMOeY0QiTiN0PRHAMWaOEFo', 'AIzaSyCWVZHTCUcmqX87uaiS6iAa_P29V6bvkNc',
-                'AIzaSyBun4qHnapymppYODzpB_7xWu5appdJZdw', 'AIzaSyBUjM6ft6KhixBjzUaX76U-BED1oPjjLj4',
-                'AIzaSyBUjM6ft6KhixBjzUaX76U-BED1oPjjLj4', 'AIzaSyCgdYE_mOy1GNoJ4aVRiEIYGsA3rpVhD-I',
-                'AIzaSyCk48aU-GdvM9lrzmxt4LIiFCUldHfNYgs', 'AIzaSyAV4oi7Y7SxM69jsHbFFRVpTNQ2EEhyHsc',
-                'AIzaSyCLoukF-SJQFFuPYWG0x2NcVBlYiQ3qEcE', 'AIzaSyC2BYu0Qm12kNBeqrXaHo-OvCKSw90n2Vo',
-                'AIzaSyAWat_SFMYRyQRlM8JUyNdTFEuzSz2780Y', 'AIzaSyDaRcPhW0IJEqTj0eXBnNXkknr48n4NT2s',
-                'AIzaSyAaSPI54BGTt6M7prl48nou7lZe_nqdXP4', 'AIzaSyClRUFVR4_lOX-FwpKqh36b1UqfOhXGOAo']
+    key_list = [{YOUR_KEY LIST}]
     # city_list = []  # '惠州','苏州','广州','青岛','大连','徐州','嘉兴','太原','宁波','常州','厦门','南宁','南昌','南通',
     # for city in city_list:  # 需要重跑   '乌鲁木齐','哈尔滨',
     # get_api(city, key_list)
